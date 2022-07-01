@@ -33,6 +33,11 @@ app.get('/', function (req, res) {
     res.render('../views/home')
 })
 
+app.get('/about', function (req, res) {
+    res.render('../views/about')
+})
+
+
 app.set('view engine', 'hbs');
 
 const port = process.env.PORT || 3000
