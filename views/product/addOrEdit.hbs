@@ -1,0 +1,47 @@
+<h3>{{viewTitle}}</h3>
+<form action="/product/addproduct" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{product._id}}">
+    <div class="form-group md-6">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" value="{{product.name}}" placeholder="Full Name">
+        <div class="text-danger">
+            {{product.nameError}}
+        </div>
+    </div>
+
+    <div class="form-group md-6">
+        <label>Category</label>
+        <select name="category" id="" class="form-control" value="{{product.category}}">
+            {{#each category}}
+            <option value="{{{catname}}}">{{{catname}}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    <div class="form-group md-6">
+        <label>Supplier</label>
+        <select name="supplier" id="" class="form-control" value="{{product.supplier}}">
+            {{#each supplier}}
+            <option value="{{{spname}}}">{{{spname}}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+        <div class="form-group md-6">
+            <label>Price</label>
+            <input type="text" name="price" placeholder="Price" value="{{product.price}}" class="form-control">
+
+        </div>
+        <div class="form-group md-6">
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description" value="{{product.description}}" class="form-control">
+        </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+        <a href="/product" class="btn btn-danger">
+            <i class="fa fa-list-alt"></i>View All
+        </a>
+    </div>
+</form>

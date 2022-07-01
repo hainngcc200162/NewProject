@@ -1,0 +1,37 @@
+<h3>
+    <a href="/supplier/addsupplier/" class="btn btn-danger">
+        <i class="fa fa-plus"> </i> Create New
+    </a>
+    Supplier List
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Supplier Name</th>
+            <th>Supplier Address</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.spname}}</td>
+            <td>{{this.spaddress}}</td>
+            <td>
+                <a href="/supplier/{{this._id}}">
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                </a>
+            </td>
+            <td> 
+                <a href="/supplier/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record?');">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true">
+
+                    </i>
+                </a>
+            </td>   
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
