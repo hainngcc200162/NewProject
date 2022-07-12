@@ -7,7 +7,7 @@ var productSchema = new mongoose.Schema({
     type: String,
     unique: true,
     trim: true,
-    lowercase: true,
+
     required: 'This field is required'
   },
   price: {
